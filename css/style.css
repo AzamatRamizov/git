@@ -1,0 +1,349 @@
+
+.overlay{
+    height: 100%;
+    width: 0%;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    background-color: rgba(73, 71, 71,0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.overlay-content a{
+    display: block;
+    color:white;
+}
+.overlay-content{
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #b4b1b1;
+    display: block;
+    transition: 0.3s;
+}
+.overlay:hover .overlay a:focus{
+    color: #f1f1f1;
+}
+.overlay .closebtn{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: red;
+    text-decoration: none;
+}
+@media screen and (max-height:660px) {
+    .overlay a { font-size: 20px;}
+    .overlay .closebtn{
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+.info{
+    visibility: hidden;
+    background-color: #555;
+    width: 120px;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.info:after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+.menu-hover{
+    position: relative;
+}
+.menu-hover:hover .info{
+    visibility: visible;
+    opacity: 1;
+}
+.nav-box{
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    /* display: none; */
+    cursor: pointer;
+}
+.phototxt{
+    text-align: center;
+    /* border: 1px solid black; */
+    box-shadow: 0 0 10px 2px white;
+    color: #b4b1b1;
+}
+.phototxt:hover{
+    transform: scale(1.02);
+}  
+  .cube-wrap {
+    --size: 10vmin;
+    position: fixed;
+    right: 10%;
+    bottom: 15%;
+    width: 0;
+    height: 0;
+    perspective: 100vmin;
+    z-index: 10;
+  }
+  @media (min-width: 0px) and (max-width: 600px){
+    .cube-wrap{
+        bottom: 10%;
+    }
+  }
+  /* .cube-wrap:hover .cube{
+    animation-play-state: paused;
+  } */
+  .cube {
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
+    animation: cube 15s linear;
+  }
+  @keyframes cube {
+    to {
+      transform: rotateX(360deg) rotateZ(45deg) rotateY(-45deg);
+    }
+  }
+  
+  .side {
+      position: absolute;
+      width: var(--size);
+      height: var(--size);
+      background-color: #eee;
+      backface-visibility: visible;
+      top: calc(var(--size) * -.5);
+      left: calc(var(--size) * -.5);
+      cursor: pointer;
+      z-index: 4;
+  }
+  .top {
+    background-color: #fff;
+    transform: rotateX(90deg) translateZ(calc(var(--size) * .5));
+}
+  .top:hover{
+    background: green;
+    color: red!important;
+  }
+  .bottom {
+    background-color: #999;
+    transform: rotateX(90deg) translateZ(calc(var(--size) * -.5));
+  }
+  .bottom:hover{
+    background: rgb(255, 140, 0);
+    color: darkgreen!important;
+  }
+  .left {
+    background-color: #ccc;
+    transform: rotateY(90deg) translateZ(calc(var(--size) * .5));
+  }
+  .left:hover{
+    background: skyblue;
+    color: blueviolet!important;
+  }
+  .right {
+    background-color: #ddd;
+    transform: rotateY(90deg) translateZ(calc(var(--size) * -.5));
+  }
+  .front {
+    background-color: #aaa;
+    transform: translateZ(calc(var(--size) * .5));
+  }
+  .front:hover{
+    background-color: #000;
+    color: white!important;
+  }
+  .back {
+    background-color: #bbb;
+    transform: translateZ(calc(var(--size) * -.5));
+  }
+  
+  :root * {
+    /* Pause the animation */
+    animation-play-state:running;
+    /* Bind the animation to scroll */
+    animation-delay: calc(var(--scroll) * -1s);
+    /* These last 2 properites clean up overshoot weirdness */
+    animation-iteration-count:infinite;
+    animation-fill-mode: both;
+  }
+ #messengers{
+    position: fixed;
+    width: 0;
+    height: 100%;
+    z-index: 4;
+    background-color: rgba(73, 71, 71,0.9);
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .closemes{
+    position: absolute;
+    top: 10px;
+    right: 45px;
+    font-size:50px;
+    color: red;
+    text-decoration: none;   
+ }
+ .closemes:hover{
+    text-decoration: none;
+    color: red;
+ }
+ .messenger-display a{
+    font-size: 30px;
+ }
+ .mess{
+    box-sizing: border-box;
+ }
+ .mess img{
+    width: 50%;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#navbarr{
+    position:fixed;
+    top: 0;
+    z-index: 2;
+}
+.nav-link{
+    font-size: 18px;
+    color: white;
+}
+.right{
+    position: absolute!important;
+    right: 0;
+}
+.bar1, .bar2, .bar3{
+    width: 30px;
+    height: 3px;
+    margin: 8px 0;
+    background-color: black;
+}
+@media(min-width: 0px) and (max-width: 850px){
+    .phototxt{
+        width: 90%!important;
+        margin: 20px auto!important;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .rasm{
+        display: none;
+    }
+}
+@media(min-width: 0px) and (max-width: 660px){
+    
+    .navbar-brand{
+        font-size: 18px;
+    }
+    .nav-link{
+        display: block;
+    }
+}
+@media(min-width:660px){
+    #cardtop .row{
+        width: 300px!important;
+        margin: 10px auto !important;
+    }
+}
+.form-control{
+    position: relative;
+    background-color: transparent;
+    border-radius: 0px;
+    border: 0;
+    border-bottom: 2px solid white;
+}
+/* .form-control input{
+    border: 0;
+    border-bottom: 2px solid blue;
+} */
+.form-control:focus{
+    background-color: transparent;
+    box-shadow: none;
+    border-color: rgb(118, 224, 47);
+}
+.form-control:focus .uzb{
+    background-color: transparent;  
+    border-color: rgb(118, 224, 47);
+}
+.formlabel{
+    color: white;
+}
+.name-label{
+    position: absolute;
+    top: 18%;
+    left: 30px;
+}
+.number-label{
+    position: absolute;
+    top: 17%;
+    left: 70px;
+}
+.form-control:focus+label{
+    transform: translateY(-22px);
+    color: rgb(118, 224, 47);
+    border-color: rgb(118, 224, 47);
+}
+.pagelink{
+    position: absolute;
+    z-index: 0;
+    top: 30%;
+    left: 5%;
+}
+.mundarija{
+    position: relative;
+    align-items: center;
+    background: #000;
+    height: 7vh;
+    transition: all 1s ease;
+    cursor: pointer;
+}
+.mundarija:hover .box{
+    left: 15%;
+}
+.box{
+    color: white;
+    padding: 7px;
+    position: absolute!important;
+    left: 0px;
+    background: #000;
+    transition: all 1s ease;
+}
